@@ -18,10 +18,10 @@ include "conexao.php"
 if(isset($_POST['atualiza'])){
     $idatualiza = intval($_POST['id']);
     $nome       = mysqli_real_escape_string($conexao, $_POST['nome']);
-    $email      = mysqli_real_escape_string($conexao, $_POST['email']);
-    $msg        = mysqli_real_escape_string($conexao, $_POST['msg']);
+    $e-mail      = mysqli_real_escape_string($conexao, $_POST['e-mail']);
+    $mensagem        = mysqli_real_escape_string($conexao, $_POST['mensagem']);
 
-    $sql = "UPDATE recados SET nome='$nome', email='$email', mensagem='$msg' WHERE id=$idatualiza";
+    $sql = "UPDATE recados SET nome='$nome', e-mail='$e-mail', mensagem='$mensagem' WHERE id=$idatualiza";
     mysqli_query($conexao, $sql) or die("Erro ao atualizar: " . mysqli_error($conexao));
     header("Location: moderar.php");
     exit;
