@@ -1,5 +1,4 @@
 <?php
-include "conexao.php";
 
 // Configurações do banco
 $host    = "localhost";   // normalmente não precisa alterar
@@ -16,5 +15,4 @@ if (!$conexao) {
 
 // SENSITIVE CASE suportar acentos e Ç
 mysqli_set_charset($conexao, "utf8");
-
 ?>
