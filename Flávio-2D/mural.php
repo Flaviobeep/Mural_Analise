@@ -5,9 +5,9 @@ include "conexao.php";
 if(isset($_POST['cadastra'])){
     $nome  = mysqli_real_escape_string($conexao, $_POST['nome']);
     $email = mysqli_real_escape_string($conexao, $_POST['e-mail']);
-    $msg   = mysqli_real_escape_string($conexao, $_POST['mensagem']);
+    $mensagem   = mysqli_real_escape_string($conexao, $_POST['mensagem']);
 
-    $sql = "INSERT INTO flavio_tabelas (nome, e-mail, mensagem) VALUES ('$nome', '$email', '$mensagem')";
+    $sql = "INSERT INTO flavio_tabelas (nome, email, mensagem) VALUES ('$nome', '$email', '$mensagem')";
     mysqli_query($conexao, $sql) or die("Erro ao inserir dados: " . mysqli_error($conexao));
     header("Location: mural.php");
     exit;
@@ -53,7 +53,7 @@ $(document).ready(function() {
     <label>E-mail:</label>
     <input type="text" name="email"/><br/>
     <label>Mensagem:</label>
-    <textarea name="msg"></textarea><br/>
+    <textarea name="mensagem"></textarea><br/>
     <input type="submit" value="Publicar no Mural" name="cadastra" class="btn"/>
 </form>
 </div>
